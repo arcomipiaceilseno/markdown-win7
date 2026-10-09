@@ -1,5 +1,7 @@
 # Markdown Editor — Documentation (English)
 
+[🇮🇹 Leggi in italiano](README.it.md)
+
 A desktop Markdown editor built with Python and Tkinter, featuring a side-by-side HTML preview that updates as you type.
 
 > **About this project:** this software was *vibe-coded*: developed iteratively with AI assistance, using natural-language prompts, testing, and follow-up changes. The code can be reviewed, adapted, and improved. Choose and add an explicit license to the repository before stating reuse or redistribution terms.
