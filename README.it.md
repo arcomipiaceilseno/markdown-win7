@@ -86,10 +86,6 @@ def saluta():
     print("Ciao!")
 ```
 
-- Primo elemento
-- Secondo elemento
-```
-
 ## Emoji e Windows 7
 
 Windows 7 non include il supporto nativo per molte emoji moderne. Nelle versioni che convertono le emoji in immagini Twemoji, queste possono apparire nell'anteprima anche se il font di sistema non le supporta. Il caricamento delle immagini remote richiede una connessione Internet. Nell'editor del testo sorgente, invece, la resa delle emoji dipende dai font disponibili.
