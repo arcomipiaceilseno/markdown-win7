@@ -1,0 +1,3 @@
+markdown2
+tkinterweb>=4.25
+emoji>=2.14,<3
