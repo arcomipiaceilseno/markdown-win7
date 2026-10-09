@@ -86,10 +86,6 @@ def greet():
     print("Hello!")
 ```
 
-- First item
-- Second item
-```
-
 ## Emoji and Windows 7
 
 Windows 7 does not provide native support for many modern emoji. In versions that convert emoji to Twemoji images, they can appear in the preview even when the system font does not support them. Loading remote images requires an Internet connection. Emoji rendering in the source editor still depends on the fonts available on the system.
