@@ -1,112 +1,176 @@
-# Markdown Editor — Documentation (English)
+# Markdown Editor --- Documentation (English)
 
 [🇮🇹 Leggi in italiano](README.it.md)
 
-A desktop Markdown editor built with Python and Tkinter, featuring a side-by-side HTML preview that updates as you type.
+A desktop Markdown editor written in Python with a Tkinter interface,
+side-by-side Markdown editing and HTML preview, automatic preview
+updates while typing, and tools for writing and navigating Markdown
+documents.
 
-> **About this project:** this software was *vibe-coded*: developed iteratively with AI assistance, using natural-language prompts, testing, and follow-up changes. The code can be reviewed, adapted, and improved. Choose and add an explicit license to the repository before stating reuse or redistribution terms.
+> **Project note:** This software was *vibe-coded*: developed
+> iteratively with the assistance of artificial intelligence through
+> natural-language instructions, testing, and successive changes.
 
-## Background and project goals
+## Project Background and Goals
 
-This project started with a practical need: a university professor asked for course exercises to be written and submitted in Markdown (`.md`) format. A difficulty quickly became apparent: many Markdown editors did not run on Windows 7, which was still used in some environments, and the available tools did not all offer the same ease of use or the same editing and preview features.
+The project started from a practical need: a university professor
+required course exercises to be written and submitted in Markdown
+(`.md`). However, many Markdown editors did not run on Windows 7, and
+available tools did not all offer the same ease of use or editing and
+preview capabilities.
 
-The goal is to provide a straightforward desktop editor with the Markdown source and formatted preview side by side, making it easier to write, edit, and review files without having to learn different tools or rely on an editor that may not be compatible with the operating system.
+The goal is to provide a simple desktop editor with Markdown source and
+formatted preview side by side, so users can write, edit, and review
+documents in one application.
 
 ## Features
 
-- Open, edit, and save `.md` and `.markdown` files.
-- Edit the Markdown source and view the formatted result side by side.
-- Refresh the preview automatically after a short pause while typing.
-- Use the available formatting toolbar to insert Markdown syntax.
-- Support common Markdown elements such as headings, bold, italics, blockquotes, links, lists, tables, and code blocks, depending on the configured extensions.
-- Preserve the preview's scroll position as far as the HTML component allows.
-- Display emoji as images in the preview on systems with limited emoji-font support, if the configured version uses Twemoji. An Internet connection is then required to load the images.
+-   Open, edit, and save `.md` and `.markdown` files.
+-   Open a Markdown file directly with the application by passing its
+    path at startup or associating `.md` files with the app in Windows.
+-   Edit Markdown source and view the HTML preview side by side.
+-   Update the preview automatically after a short pause while typing.
+-   Synchronize scrolling between the editor and preview.
+-   Use the toolbar at the top of the window to apply Markdown
+    formatting.
+-   Search for text in the current document using a dedicated search
+    window, with matching results highlighted.
+-   Switch the interface language between English and Italian.
+-   Use a centralized translation system designed to make adding more
+    languages easier in the future.
+-   Support Markdown elements such as headings, bold, italic,
+    blockquotes, links, lists, tables, and code blocks, depending on the
+    configured extensions.
+-   Display emoji in the preview as images when Twemoji is enabled. An
+    Internet connection is required to load remote images.
 
 ## Requirements
 
-- Python 3.
-- The packages listed in `requirements.txt`.
-- Tkinter, usually included with Python distributions for Windows.
-- An Internet connection for remote emoji images, if enabled.
+To run the application from source:
 
-Compatibility depends on the installed Python and library versions. Windows 7 is end-of-life, and recent Python or dependency releases may not install on it. Use versions compatible with your operating system and obtain them only from trusted sources.
+-   Python 3 compatible with your operating system.
+-   The packages listed in `requirements.txt`.
+-   Tkinter, usually included with Python distributions for Windows.
+-   An Internet connection for remote emoji images, if enabled.
 
-## Installation and launch
+Compatibility depends on the installed versions of Python and its
+libraries. Windows 7 is an unsupported operating system, and recent
+Python versions or dependencies may not be compatible with it. Use
+versions compatible with your system and download them only from trusted
+sources.
 
-There are two ways to run the application:
+## Installation and Launch
 
-### Option 1 — Download the executable
+There are two ways to use Markdown Editor.
 
-Open the repository's GitHub **Releases** section and download the executable for the desired version, if one is available. This lets you launch the application without manually running the Python script. Follow any instructions included with the release.
+### Option 1 --- Windows executable
 
-### Option 2 — Run the program with Python
+Open the repository's
+[Releases](https://github.com/arcomipiaceilseno/markdown-win7/releases)
+page and download one of the packages available for the release you
+want:
 
-1. Download or clone the repository.
-2. Open a terminal in the project directory containing `app.py`.
-3. Install dependencies if they are not already installed:
+-   **`markdown-win7-installer.exe`** --- installer version.
+-   **`markdown-win7-portable.exe`** --- portable version, intended to
+    run without a traditional installation procedure.
 
-   ```bash
-   python -m pip install -r requirements.txt
-   ```
+Package availability depends on the files attached to each release.
 
-4. Launch the application:
+### Option 2 --- Run from source
 
-   ```bash
-   py app.py
-   ```
+1.  Download or clone the repository.
 
-   Alternatively, if the `py` command is unavailable:
+2.  Open a terminal in the project folder containing `main.py`.
 
-   ```bash
-   python app.py
-   ```
+3.  Install the dependencies if they are not already installed:
 
-The executable is available only if a build has been published in the repository's Releases section. Running from source requires Python and the necessary dependencies.
+    ``` bash
+    py -m pip install -r requirements.txt
+    ```
 
-## How to use it
+4.  Launch the application:
 
-1. Start the application.
-2. Choose **File → Open .md file...** to open an existing document.
-3. Write or edit Markdown in the left pane.
-4. Review the result in the right pane. The preview updates automatically after a short pause.
-5. Use the toolbar to insert supported Markdown syntax.
-6. Choose **File → Save** to save your changes. For a new document, select a destination when prompted.
+    ``` bash
+    py main.py
+    ```
 
-### Markdown example
+    If the `py` command is unavailable, try:
 
-```markdown
-# My document
+    ``` bash
+    python main.py
+    ```
 
-This text is **bold** and this text is *italic*.
+To open a Markdown document by passing its path to the application, run:
+
+``` bash
+py main.py "C:\path\to\document.md"
+```
+
+Replace the example path with the actual file path. Opening `.md` files
+by double-clicking them in File Explorer also requires Windows to be
+configured to associate those files with the application.
+
+## Usage
+
+1.  Launch the application, or open an `.md` file directly with it.
+2.  To open a document from within the application, select **File → Open
+    .md File...**.
+3.  Write or edit Markdown in the editor pane.
+4.  View the result in the preview pane, which updates automatically
+    after a short pause.
+5.  Use the top toolbar to insert supported Markdown syntax.
+6.  Use the search feature to find text in the current document.
+7.  Select English or Italian from the language menu.
+8.  Select **File → Save** to save your changes. For a new document,
+    choose a path when prompted.
+
+## Markdown Example
+
+``` markdown
+# My Document
+
+This is **bold text** and this is *italic text*.
 
 > A blockquote.
 
 `inline code`
-
-```python
-def greet():
-    print("Hello!")
 ```
 
 ## Emoji and Windows 7
 
-Windows 7 does not provide native support for many modern emoji. In versions that convert emoji to Twemoji images, they can appear in the preview even when the system font does not support them. Loading remote images requires an Internet connection. Emoji rendering in the source editor still depends on the fonts available on the system.
+Windows 7 does not provide native support for many modern emoji. In
+versions that convert emoji to Twemoji images, emoji may appear in the
+preview even if the system font does not support them. Loading remote
+images requires an Internet connection. Emoji rendering in the source
+editor depends on the fonts available on the system.
 
-## Technical notes and limitations
+## Technical Notes and Limitations
 
-- HTML preview is generated from Markdown using `markdown2` and displayed with `tkinterweb`.
-- A short update delay avoids rebuilding the preview for every keystroke.
-- Scroll preservation depends on the features supported by the installed `tkinterweb` version.
-- Rendering of some Markdown features may vary with enabled extensions and library versions.
-- Keep a backup before editing important documents.
+-   The HTML preview is generated from Markdown using `markdown2` and
+    displayed with `tkinterweb`.
+-   Delaying preview updates avoids rebuilding the preview after every
+    keystroke.
+-   Scroll synchronization also depends on the features supported by the
+    installed version of `tkinterweb`.
+-   The rendering of some Markdown features may vary depending on
+    enabled extensions and library versions.
+-   Direct file opening depends on the path passed at startup or on the
+    file associations configured in Windows.
+-   Compatibility with Windows 7 should be verified with the specific
+    versions of the application, Python, and its dependencies.
+-   Keep a backup before using the application with important documents.
 
-## Switching documentation languages
+## Documentation Languages
 
-Two documentation files are provided: `README.md` (English) and `README.it.md` (Italian). Open whichever language you prefer. On GitHub, you can use the English README as the repository's main page and link to the Italian version near the top, or do the reverse.
+Two documentation files are available: `README.md` (English) and
+`README.it.md` (Italian). The link at the top of each document lets you
+switch to the other language.
 
 ## Contributing
 
-Bug reports, corrections, and improvements are welcome. Test changes on a copy of the document and include your operating system and Python/dependency versions when reporting an issue.
+Bug reports, corrections, and improvements are welcome. Before proposing
+changes, test them on a copy of your document and include the operating
+system and Python/dependency versions you used.
 
 ## License
 
@@ -114,20 +178,21 @@ MIT License
 
 Copyright (c) 2026 Andrea Scarano
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
