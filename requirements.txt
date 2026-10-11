@@ -1,3 +1,4 @@
-markdown2
-tkinterweb>=4.25
+markdown2>=2.4,<2.5
+tkinterweb>=4.25,<5
 emoji>=2.14,<3
+reportlab>=3.6.12,<4

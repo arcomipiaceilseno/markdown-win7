@@ -6,6 +6,7 @@ from tkinter import messagebox, ttk
 from tkinterweb import HtmlFrame
 
 from .file_manager import FileManager
+from .export_manager import ExportManager
 from .markdown_renderer import markdown_to_html
 from .toolbar import Toolbar
 from .search import open_search_dialog
@@ -126,6 +127,7 @@ class MarkdownViewerApp:
         self._sync_scroll_bindings = {}
 
         self.file_manager = FileManager(self)
+        self.export_manager = ExportManager(self)
         self.toolbar = None
 
         self.create_layout()
@@ -165,6 +167,11 @@ class MarkdownViewerApp:
         file_menu.add_separator()
         file_menu.add_command(label=self.t("save"), command=self.file_manager.save_file, accelerator="Ctrl+S")
         file_menu.add_command(label=self.t("save_as"), command=self.file_manager.save_file_as, accelerator="Ctrl+Shift+S")
+        file_menu.add_separator()
+        export_menu = tk.Menu(file_menu, tearoff=0)
+        export_menu.add_command(label=self.t("export_html"), command=self.export_manager.export_html)
+        export_menu.add_command(label=self.t("export_pdf"), command=self.export_manager.export_pdf)
+        file_menu.add_cascade(label=self.t("export"), menu=export_menu)
         file_menu.add_separator()
         file_menu.add_command(label=self.t("exit"), command=self.exit_app)
         menubar.add_cascade(label=self.t("file"), menu=file_menu)

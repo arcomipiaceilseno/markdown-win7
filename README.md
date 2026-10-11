@@ -41,6 +41,7 @@ documents in one application.
 -   Support Markdown elements such as headings, bold, italic,
     blockquotes, links, lists, tables, and code blocks, depending on the
     configured extensions.
+-   Exporting Markdown (.md) files to PDF and HTML formats.
 -   Display emoji in the preview as images when Twemoji is enabled. An
     Internet connection is required to load remote images.
 

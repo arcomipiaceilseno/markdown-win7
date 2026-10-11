@@ -44,6 +44,7 @@ scrivere, modificare e controllare i file in un'unica applicazione.
 -   Supportare elementi Markdown come titoli, grassetto, corsivo,
     citazioni, link, liste, tabelle e blocchi di codice, in base alle
     estensioni configurate.
+-   Esportazione dei file Markdown (.md) nei formati PDF e HTML.
 -   Visualizzare le emoji nell'anteprima come immagini, se è abilitato
     Twemoji. È necessaria una connessione Internet per caricare le
     immagini remote.
